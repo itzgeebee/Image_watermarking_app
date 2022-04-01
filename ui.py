@@ -13,9 +13,9 @@ class WaterMarkUI:
         """displays the first interface """
         # initialize tkinter GUI window
         self.window = Tk()
-        self.window.geometry("1000x800")
+        # self.window.geometry("1000x800")
         self.window.title("Image watermarker")
-        self.window.config(pady=50, padx=200)
+        self.window.config(pady=50, padx=200, bg="#f7f5dd")
 
         # welcome message
         self.home_label = Label(text="Welcome, Please select an image to watermark")
@@ -122,7 +122,7 @@ class WaterMarkUI:
         self.img_copy = self.img.copy()
 
         # transparent watermark image
-        self.watermark_img = Image.new('RGBA', (160, 160), (0, 0, 0, 0))
+        self.watermark_img = Image.new('RGBA', (self.width, self.height), (0, 0, 0, 0))
         self.attach_watermark(txt)
 
         # self.discard = Button(text="undo changes ❌", command=self.discard, bg="red")
